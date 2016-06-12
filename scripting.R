@@ -3,7 +3,8 @@ source("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/yash_scri
 source("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/TribbyTextGenerate.R")
 
 # get text 
-text <- get_text()
+text <- source("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/poetryText.R")
+text <- text[[1]]
 
 # get poem 
 poem <- generate_poem(text)

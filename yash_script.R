@@ -27,10 +27,9 @@ for (i in 1:length(out$data)){
 # scraping URL 
 library(rvest)
 library(dplyr)
-
-text = read_html(all_URLS[1])
-
-
+library(RSelenium)
 }
+
+
   
 

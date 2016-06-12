@@ -1,4 +1,4 @@
-text <- "Bright star, would I were stedfast as thou art-- 
+"Bright star, would I were stedfast as thou art-- 
  Not in lone splendour hung aloft the night
  And watching, with eternal lids apart,
  Like nature's patient, sleepless Eremite,
