@@ -1,5 +1,4 @@
-
-generate_text <- function(text){
+generate_poem <- function(text){
 
 library(stringr)
 nouns <- as.vector(read.table("nounlist.txt")$V1)
