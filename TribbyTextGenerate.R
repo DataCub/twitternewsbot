@@ -1,4 +1,9 @@
+
+generate_text <- function(text){
+
 library(stringr)
+nouns <- as.vector(read.table("nounlist.txt")$V1)
+  
 
 #Text Preparation
 #Formatting the text 
@@ -21,7 +26,7 @@ word_list <- vector(mode = "character", length = 0)
 for(i in 1:(length(split) - 1)){
   
   #Adds unique words to the word list
-  if(!split[i]%in%word_list){
+  if(!split[i] %in% word_list & split[i]%in%nouns){
     word_list[length(word_list) + 1] <- split[i]
   }
   
@@ -38,7 +43,7 @@ for(i in 1:(length(split) - 1)){
 }
 
 #Handles the last word in the text and addresses a possible edge case
-if(!split[length(split)]%in%word_list){
+if(!split[length(split)] %in% word_list){
   word_list[length(word_list) + 1] <- split[length(split)]
 }
 env[[split[length(split)]]] <- "There is no next word"
@@ -49,10 +54,10 @@ env[[split[length(split)]]] <- "There is no next word"
 output <- vector(mode = "character", length = 0)
 
 #limit on the number of characters for the output to have
-limit <- sample(30:120, 1)
+limit <- sample(50:120, 1)
 
 #Deciding the first word using the wordlist and a random index
-start_index <- sample(1:length(word_list), 1)
+start_index <- sample(1:length(word_list)-1, 1)
 word <- word_list[start_index]
 text_length <- nchar(word)
 output[1] <- word
@@ -85,3 +90,5 @@ while(not_finished){
 #Creates a string from the output vector and prints it out
 tweet <- str_c(output, collapse = " ")
 print(tweet)
+
+}
