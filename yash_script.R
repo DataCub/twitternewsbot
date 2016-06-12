@@ -11,16 +11,26 @@ today <- gsub("(-)*", "", today)
 yesterday <- as.character(as.numeric(today) - 00000001)
 
 #grab data from the Article Search API using rtimes 
-out <- as_search(q = "news", begin_date = yesterday, end_date = today, key = key) 
+out <- as_search(q = "", begin_date = yesterday, end_date = today, key = key) 
 
 all_articles <- out$data[1:length(out$data)]
 
-#grabbing just the headlines and making one character string 
-text <- ""
-for (i in 1:length(out$data))
-{ 
+
+# grabbing URL 
+all_URLS <- c()
+for (i in 1:length(out$data)){
   change_to_text <- as.character(all_articles[[i]])
-  result <- change_to_text[2]
-  text <- paste(text, result)
+  URL <- change_to_text[1]
+  all_URLS <- append(all_URLS, URL, after = 1)
 }
-text <- gsub("(^\\s)", "", text)} 
+
+# scraping URL 
+library(rvest)
+library(dplyr)
+
+text = read_html(all_URLS[1])
+
+
+}
+  
+
