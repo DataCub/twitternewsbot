@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# source file for text \nsource(\"/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/yash_script.R\")\nsource(\"/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/TribbyTextGenerate.R\")\n\n# get text \ntext <- source(\"/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/poetryText.R\")\ntext <- text[[1]]\n\n# get poem \npoem <- generate_poem(text)\n\n# send it to twitter \nlibrary(twitteR)\nlibrary(base64enc)\nlibrary(httr)\n\nconsumer_key <- \"tk3GAuZryfHFWZ65x4Rxgx1Rh\"\nconsumer_secret <- \"XEbnvr3BsPxbVaLohMYbohSYhDPpC5KKypgQbsf7VvQtLF4RGP\"\naccess_token <- \"741928314323996672-pcMtgEWBfQQEhVk2fNLJ03yibmglsFr\"\naccess_secret <- \"twXwPVTyvvKQbBQPKWI4avbJRKmMdQnSmO1USdJap0sLJ\"\nsetup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)\n\nwhile (nchar(poem) > 90) {\n  poem <- generate_poem(text)\n}\ntweet(poem)\n\nquit(save = \"no\")\n",
+    "created" : 1465736471726.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3263942995",
+    "id" : "F36F6210",
+    "lastKnownWriteTime" : 1465769559,
+    "last_content_update" : 1465769559202,
+    "path" : "~/Desktop/iXperience/Projects/TwitterProject/scripting.R",
+    "project_path" : "scripting.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

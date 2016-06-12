@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "generate_poem <- function(text){\n\nlibrary(stringr)\nnouns <- as.vector(read.table(\"/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/nounlist.txt\")$V1)\n  \n#Text Preparation\n#Formatting the text \ntext <- tolower(text)\ntext <- str_replace_all(text, \" i \", \" I \")\ntext <- str_replace_all(text, \"\\n\", \"\")\ntext <- str_replace_all(text, \"[.]\", \"\")\ntext <- str_replace_all(text, \"[?]\", \"\")\ntext <- str_replace_all(text, \"  \", \" \")\n\n#Splitting each word into an element of a vector\nsplit <- str_split(text, \" \")[[1]]\n\nenv <- new.env()\n\n#Creating a word list which will be used later to pick the first word\nword_list <- vector(mode = \"character\", length = 0)\n\n\nfor(i in 1:(length(split) - 3)){\n  \n  #Adds unique words to the word list\n  if(!split[i] %in% word_list & split[i]%in%nouns){\n    word_list[length(word_list) + 1] <- split[i]\n  }\n  \n  #The rest of the for loop adds each word in the text to the environment using the\n  #word as the key and the words that follow as the values\n  index <- length(env[[split[i]]])\n  \n  if(index > 0){\n    env[[split[i]]][index + 1] <- str_c(split[i+1], split[i+2], split[i+3], sep = \" \")\n  }\n  else{\n    env[[split[i]]] <- str_c(split[i+1], split[i+2], split[i+3], sep = \" \")\n  }\n}\n\n#Handles the last word in the text and addresses a possible edge case\nenv[[split[length(split)]]] <- \"There is no next word\"\n\n#Random Sentence Generation\n\n#empty vector which will hold every word for the output\noutput <- vector(mode = \"character\", length = 0)\n\n#limit on the number of characters for the output to have\nlimit <- sample(50:120, 1)\n\n#Deciding the first word using the wordlist and a random index\nstart_index <- sample(1:length(word_list)-1, 1)\nword <- word_list[start_index]\ntext_length <- nchar(word)\noutput[1] <- word\n\n#boolean to control the while loop\nnot_finished = TRUE\n\nwhile(not_finished){\n  \n  if(text_length > 10 & word %in% nouns){\n    not_finished = FALSE\n  }else{\n    #Picks the next word using a random index\n    index <- sample(1:length(env[[word]]), 1)\n    next_word <- env[[word]][index] \n    \n    if(next_word == \"There is no next word\"){\n      nont_finished = FALSE\n    }\n    else{\n      #Adds the new word to the output vector and updates variables\n      output[length(output) + 1] <- next_word\n      word <- str_split(next_word, \" \")[[1]][3]\n      text_length <- text_length + nchar(next_word) + 4\n    }\n  }\n}\n\n\n#Creates a string from the output vector and prints it out\ntweet <- str_c(output, collapse = \" \")\nprint(tweet)\n\n}\n\n",
+    "created" : 1465736398556.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3304365878",
+    "id" : "92D9D605",
+    "lastKnownWriteTime" : 1465769414,
+    "last_content_update" : 1465769414,
+    "path" : "~/Desktop/iXperience/Projects/TwitterProject/TribbyTextGenerate.R",
+    "project_path" : "TribbyTextGenerate.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

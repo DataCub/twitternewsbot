@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "get_text <- function() {\n\nlibrary(rtimes)\n\n#key \nkey <- \"610101c594e74e9b9e9660118c7710cd\"\n\n#put the dates in generic format \ntoday <- Sys.Date()\ntoday <- gsub(\"(-)*\", \"\", today)\nyesterday <- as.character(as.numeric(today) - 00000001)\n\n#grab data from the Article Search API using rtimes \nout <- as_search(q = \"\", begin_date = yesterday, end_date = today, key = key) \n\nall_articles <- out$data[1:length(out$data)]\n\n\n# grabbing URL \nall_URLS <- c()\nfor (i in 1:length(out$data)){\n  change_to_text <- as.character(all_articles[[i]])\n  URL <- change_to_text[1]\n  all_URLS <- append(all_URLS, URL, after = 1)\n}\n\n# scraping URL \nlibrary(rvest)\nlibrary(dplyr)\nlibrary(RSelenium)\n}\n\n\n  \n\n",
+    "created" : 1465726492116.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3081660600",
+    "id" : "304FA44",
+    "lastKnownWriteTime" : 1465769523,
+    "last_content_update" : 1465769523209,
+    "path" : "~/Desktop/iXperience/Projects/TwitterProject/yash_script.R",
+    "project_path" : "yash_script.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

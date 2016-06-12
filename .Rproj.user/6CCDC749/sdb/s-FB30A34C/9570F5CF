@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "old script\n\n#grabbing just the headlines and making one character string \n\n#text <- \"\"\n# for (i in 1:length(out$data))\n# { \n#   change_to_text <- as.character(all_articles[[i]])\n#   result <- change_to_text[2]\n#   text <- paste(text, result)\n# }\n# text <- gsub(\"(^\\\\s)\", \"\", text)} ",
+    "created" : 1465763866538.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "633778487",
+    "id" : "9570F5CF",
+    "lastKnownWriteTime" : 1465769381,
+    "last_content_update" : 1465769381107,
+    "path" : "~/Desktop/iXperience/Projects/TwitterProject/html_stuff.R",
+    "project_path" : "html_stuff.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
