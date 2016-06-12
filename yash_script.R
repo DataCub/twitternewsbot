@@ -12,15 +12,16 @@ yesterday <- as.character(as.numeric(today) - 00000001)
 out <- as_search(q = "news", begin_date = yesterday, end_date = today, key = key) 
 
 all_articles <- out$data[1:length(out$data)]
-text <- ""
 
+#grabbing just the headlines and making one character string 
+text <- ""
 for (i in 1:length(out$data))
 { 
   change_to_text <- as.character(all_articles[[i]])
   result <- change_to_text[2]
   text <- paste(text, result)
 }
-
+text <- gsub("(^\\s)", "", text)
 
 
 
