@@ -1,7 +1,7 @@
 generate_poem <- function(text){
 
 library(stringr)
-nouns <- as.vector(read.table("nounlist.txt")$V1)
+nouns <- as.vector(read.table("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/nounlist.txt")$V1)
   
 
 #Text Preparation
