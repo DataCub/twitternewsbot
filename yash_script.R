@@ -1,3 +1,5 @@
+get_text <- function() {
+
 library(rtimes)
 
 #key 
@@ -21,7 +23,4 @@ for (i in 1:length(out$data))
   result <- change_to_text[2]
   text <- paste(text, result)
 }
-text <- gsub("(^\\s)", "", text)
-
-
-
+text <- gsub("(^\\s)", "", text)} 

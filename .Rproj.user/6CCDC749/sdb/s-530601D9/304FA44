@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "library(rtimes)\n\n#key \nkey <- \"610101c594e74e9b9e9660118c7710cd\"\n\n#put the dates in generic format \ntoday <- Sys.Date()\ntoday <- gsub(\"(-)*\", \"\", today)\nyesterday <- as.character(as.numeric(today) - 00000001)\n\n#grab data from the Article Search API using rtimes \nout <- as_search(q = \"news\", begin_date = yesterday, end_date = today, key = key) \n\nall_articles <- out$data[1:length(out$data)]\ntext <- \"\"\n\nfor (i in 1:length(out$data))\n{ \n  change_to_text <- as.character(all_articles[[i]])\n  result <- change_to_text[2]\n  text <- paste(text, result)\n}\n\n\n\n\n",
+    "contents" : "get_text <- function() {\n\nlibrary(rtimes)\n\n#key \nkey <- \"610101c594e74e9b9e9660118c7710cd\"\n\n#put the dates in generic format \ntoday <- Sys.Date()\ntoday <- gsub(\"(-)*\", \"\", today)\nyesterday <- as.character(as.numeric(today) - 00000001)\n\n#grab data from the Article Search API using rtimes \nout <- as_search(q = \"news\", begin_date = yesterday, end_date = today, key = key) \n\nall_articles <- out$data[1:length(out$data)]\n\n#grabbing just the headlines and making one character string \ntext <- \"\"\nfor (i in 1:length(out$data))\n{ \n  change_to_text <- as.character(all_articles[[i]])\n  result <- change_to_text[2]\n  text <- paste(text, result)\n}\ntext <- gsub(\"(^\\\\s)\", \"\", text)} \n",
     "created" : 1465726492116.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1604346043",
+    "hash" : "4226370950",
     "id" : "304FA44",
-    "lastKnownWriteTime" : 1465731341,
-    "last_content_update" : 1465731341826,
+    "lastKnownWriteTime" : 1465736880,
+    "last_content_update" : 1465736880717,
     "path" : "~/Desktop/iXperience/Projects/TwitterProject/yash_script.R",
     "project_path" : "yash_script.R",
     "properties" : {
