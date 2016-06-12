@@ -62,7 +62,7 @@ not_finished = TRUE
 
 while(not_finished){
   
-  if(text_length > limit & word %in% nouns){
+  if(text_length > 10 & word %in% nouns){
     not_finished = FALSE
   }else{
     #Picks the next word using a random index
