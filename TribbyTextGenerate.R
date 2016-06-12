@@ -3,7 +3,6 @@ generate_poem <- function(text){
 library(stringr)
 nouns <- as.vector(read.table("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/nounlist.txt")$V1)
   
-
 #Text Preparation
 #Formatting the text 
 text <- tolower(text)
@@ -22,7 +21,7 @@ env <- new.env()
 word_list <- vector(mode = "character", length = 0)
 
 
-for(i in 1:(length(split) - 1)){
+for(i in 1:(length(split) - 3)){
   
   #Adds unique words to the word list
   if(!split[i] %in% word_list & split[i]%in%nouns){
@@ -34,17 +33,14 @@ for(i in 1:(length(split) - 1)){
   index <- length(env[[split[i]]])
   
   if(index > 0){
-    env[[split[i]]][index + 1] <- split[i+1]
+    env[[split[i]]][index + 1] <- str_c(split[i+1], split[i+2], split[i+3], sep = " ")
   }
   else{
-    env[[split[i]]] <- split[i + 1]
+    env[[split[i]]] <- str_c(split[i+1], split[i+2], split[i+3], sep = " ")
   }
 }
 
 #Handles the last word in the text and addresses a possible edge case
-if(!split[length(split)] %in% word_list){
-  word_list[length(word_list) + 1] <- split[length(split)]
-}
 env[[split[length(split)]]] <- "There is no next word"
 
 #Random Sentence Generation
@@ -73,21 +69,22 @@ while(not_finished){
     index <- sample(1:length(env[[word]]), 1)
     next_word <- env[[word]][index] 
     
-    #Addresses an edge case because the last word will not have any words following it
     if(next_word == "There is no next word"){
-      not_finished = FALSE
+      nont_finished = FALSE
     }
     else{
       #Adds the new word to the output vector and updates variables
       output[length(output) + 1] <- next_word
-      word <- next_word
-      text_length <- text_length + nchar(word) + 1
+      word <- str_split(next_word, " ")[[1]][3]
+      text_length <- text_length + nchar(next_word) + 4
     }
   }
 }
+
 
 #Creates a string from the output vector and prints it out
 tweet <- str_c(output, collapse = " ")
 print(tweet)
 
 }
+
