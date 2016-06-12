@@ -17,6 +17,7 @@ all_articles <- out$data[1:length(out$data)]
 
 
 # grabbing URL 
+all_URLS <- c()
 for (i in 1:length(out$data)){
   change_to_text <- as.character(all_articles[[i]])
   URL <- change_to_text[1]
@@ -24,10 +25,12 @@ for (i in 1:length(out$data)){
 }
 
 # scraping URL 
-library(RCurl)
+library(rvest)
+library(dplyr)
 
-text = getURL(all_URLS[1])
-marathon = getURL("https://en.wikipedia.org/wiki/Marathon_world_record_progression")
+text = read_html(all_URLS[1])
+
+
 }
   
 
