@@ -11,17 +11,12 @@ generate_poem <- function(text){
   text <- removePunctuation(text)
   text <- stripWhitespace(text)
   text <- str_replace_all(text, " i ", " I ")
-  text <- str_replace_all(text, "\n", "")
-  text <- str_replace_all(text, "[.]", "")
-  text <- str_replace_all(text, "[?]", "")
-  text <- str_replace_all(text, "  ", " ")
-  text <- str_replace_all(text, "(-*)", "")
-  text <- str_replace_all(text, "('+'*)", "")
   text <- str_trim(text)
+  text <- paste0(text[1:length(text)], collapse = " ")
 
   
   #Splitting each word into an element of a vector
-  split <- sapply(text, str_split(text, " "))
+  split <- str_split(text, " ")
   
   env <- new.env()
   
