@@ -6,13 +6,13 @@ generate_poem <- function(text){
   
   #Text Preparation
   #Formatting the text 
+  text <- paste0(text[1:length(text)], collapse = " ")
   text <- tolower(text)
   text <- removeNumbers(text)
   text <- removePunctuation(text)
   text <- stripWhitespace(text)
   text <- str_replace_all(text, " i ", " I ")
   text <- str_trim(text)
-  text <- paste0(text[1:length(text)], collapse = " ")
 
   
   #Splitting each word into an element of a vector
