@@ -1,4 +1,4 @@
-"Bright star, would I were stedfast as thou art-- 
+"Bright star, would I were stedfast as thou art--
  Not in lone splendour hung aloft the night
  And watching, with eternal lids apart,
  Like nature's patient, sleepless Eremite,
@@ -11,8 +11,8 @@
  To feel for ever its soft fall and swell,
  Awake for ever in a sweet unrest,
  Still, still to hear her tender-taken breath,
- And so live ever--or else swoon to death. 
- When I have fears that I may cease to be 
+ And so live ever--or else swoon to death.
+ When I have fears that I may cease to be
  Before my pen has glean'd my teeming brain,
  Before high-piled books, in charactery,
  Hold like rich garners the full ripen'd grain;
@@ -367,19 +367,19 @@
  Fools! make me whole again that weighty pearl 
  The Queen of Egypt melted, and I’ll say 
  That ye may love in spite of beaver hats. 
- The Poetry of earth is never dead:    
- When all the birds are faint with the hot sun,    
- And hide in cooling trees, a voice will run    
- From hedge to hedge about the new-mown mead;    
- That is the Grasshopper’s—he takes the lead       
- In summer luxury,—he has never done    
- With his delights; for when tired out with fun    
- He rests at ease beneath some pleasant weed.    
- The poetry of earth is ceasing never:    
- On a lone winter evening, when the frost      
- Has wrought a silence, from the stove there shrills    
- The Cricket’s song, in warmth increasing ever,    
- And seems to one in drowsiness half lost,    
+ The Poetry of earth is never dead:
+ When all the birds are faint with the hot sun,
+ And hide in cooling trees, a voice will run
+ From hedge to hedge about the new-mown mead;
+ That is the Grasshopper’s—he takes the lead 
+ In summer luxury,—he has never done
+ With his delights; for when tired out with fun
+ He rests at ease beneath some pleasant weed.
+ The poetry of earth is ceasing never:
+ On a lone winter evening, when the frost
+ Has wrought a silence, from the stove there shrills
+ The Cricket’s song, in warmth increasing ever,
+ And seems to one in drowsiness half lost,
  The Grasshopper’s among some grassy hills.
  Souls of Poets dead and gone, 
  What Elysium have ye known, 
@@ -402,7 +402,7 @@
  Underneath a new old sign 
  Sipping beverage divine, 
  And pledging with contented smack 
- The Mermaid in the Zodiac.  
+ The Mermaid in the Zodiac.
  Souls of Poets dead and gone, 
  What Elysium have ye known, 
  Happy field or mossy cavern, 

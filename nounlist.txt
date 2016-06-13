@@ -570,7 +570,6 @@ camera
 camp
 campaign
 campanile
-can
 canada
 canadian
 canal
@@ -1849,7 +1848,6 @@ herring
 hexagon
 heyday
 hide
-high
 highlight
 high-rise
 highway
@@ -3295,7 +3293,6 @@ save
 saving
 savior
 saviour
-saw
 saxophone
 scale
 scallion
