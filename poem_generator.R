@@ -1,19 +1,27 @@
 generate_poem <- function(text){
   
   library(stringr)
+  library(tm)
   nouns <- as.vector(read.table("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/nounlist.txt")$V1)
   
   #Text Preparation
   #Formatting the text 
   text <- tolower(text)
+  text <- removeNumbers(text)
+  text <- removePunctuation(text)
+  text <- stripWhitespace(text)
   text <- str_replace_all(text, " i ", " I ")
   text <- str_replace_all(text, "\n", "")
   text <- str_replace_all(text, "[.]", "")
   text <- str_replace_all(text, "[?]", "")
   text <- str_replace_all(text, "  ", " ")
+  text <- str_replace_all(text, "(-*)", "")
+  text <- str_replace_all(text, "('+'*)", "")
+  text <- str_trim(text)
+
   
   #Splitting each word into an element of a vector
-  split <- str_split(text, " ")[[1]]
+  split <- sapply(text, str_split(text, " "))
   
   env <- new.env()
   

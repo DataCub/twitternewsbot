@@ -1,4 +1,4 @@
-get_text <- function() {
+get_article <- function() {
 
 library(rtimes)
 
@@ -24,11 +24,30 @@ for (i in 1:length(out$data)){
   all_URLS <- append(all_URLS, URL, after = 1)
 }
 
-# scraping URL 
+article_number <- sample(1:length(all_URLS), 1)
+all_URLS[[article_number]]
+}
+
+get_text <- function(article){
+
 library(rvest)
 library(dplyr)
 library(RSelenium)
+library(stringr)
+
+page <- read_html(article)
+words <- page %>% html_nodes("div > p") %>% html_text()
+
+# trimming words 
+trimmed_vec <- str_trim(words)
+trimmed_vec <- trimmed_vec[trimmed_vec != ""]
+
+all_words <- sapply(trimmed_vec, paste0)
+  
 }
+
+
+
 
 
   
