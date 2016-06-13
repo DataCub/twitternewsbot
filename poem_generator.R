@@ -2,7 +2,7 @@ generate_poem <- function(text){
   
   library(stringr)
   library(tm)
-  nouns <- as.vector(read.table("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/nounlist.txt")$V1)
+  nouns <- as.vector(read.table("~/Documents/twitternewsbot/nounlist.txt")$V1)
   
   #Text Preparation
   #Formatting the text 
@@ -16,7 +16,7 @@ generate_poem <- function(text){
 
   
   #Splitting each word into an element of a vector
-  split <- str_split(text, " ")
+  split <- str_split(text, " ")[[1]]
   
   env <- new.env()
   

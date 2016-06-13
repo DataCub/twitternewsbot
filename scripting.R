@@ -1,6 +1,6 @@
 # source file for text 
-source("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/text_gen.R")
-source("/Users/yashtekriwal/Desktop/iXperience/Projects/TwitterProject/poem_generator.R")
+source("text_gen.R")
+source("poem_generator.R")
 
 # get text 
 article <- get_article()
