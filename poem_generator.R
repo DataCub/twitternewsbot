@@ -2,7 +2,9 @@ generate_poem <- function(text){
   
   library(stringr)
   library(tm)
-  nouns <- as.vector(read.table("~/Documents/twitternewsbot/nounlist.txt")$V1)
+  
+  #change path name to reflect your own location 
+  nouns <- as.vector(read.table("~/Desktop/iXperience/Projects/TwitterProject/nounlist.txt")$V1)
   
   #Text Preparation
   #Formatting the text 
